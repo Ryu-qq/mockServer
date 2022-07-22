@@ -11,12 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping()
 public class LoginController {
-
-
     @GetMapping("login/redirect")
     public ResponseEntity getAccessToken(@RequestParam("token") String accessToken){
         return ResponseEntity.ok().body(TokenResponseDto.builder().token(accessToken).build());
-
     }
-
 }

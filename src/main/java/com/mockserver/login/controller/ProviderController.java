@@ -35,8 +35,6 @@ public class ProviderController {
         String[] codeList = {"code"};
         String[] stateList = {authorizationTokenRequestDto.getState()};
 
-        System.out.println("authorizationTokenRequestDto = " + authorizationTokenRequestDto.getClient_id());
-
         redirectAttributes.addAttribute("code", codeList);
         redirectAttributes.addAttribute("state", stateList);
 
@@ -48,7 +46,7 @@ public class ProviderController {
     }
 
     @PostMapping("oauth/token")
-    public ResponseEntity<HashMap<String, Object>> generateToken4(HttpServletRequest request){
+    public ResponseEntity<HashMap<String, Object>> generateToken4(){
 
         LocalDateTime localDateTime = LocalDateTime.now().plusDays(3);
         Instant instant = localDateTime.atZone(ZoneId.systemDefault()).toInstant();
@@ -58,12 +56,6 @@ public class ProviderController {
 
         String mock = createAuthToken("mock", Date.from(instant),Keys.hmacShaKeyFor("926D96C90030DD58429D2751AC1BDBBC".getBytes()));
         String mock2 = createAuthToken("mock", Date.from(instant2), Keys.hmacShaKeyFor("926D96C90030DD58429D2751AC1BDBBC".getBytes()));
-
-        HashSet<String> set = new HashSet<>();
-
-        set.add("profile_nickname");
-        set.add("account_email");
-
 
         HashMap<String, Object> map = new HashMap<>();
         map.put("token_type", "bearer");
