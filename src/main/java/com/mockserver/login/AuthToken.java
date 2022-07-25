@@ -1,7 +1,6 @@
 package com.mockserver.login;
 
 import io.jsonwebtoken.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

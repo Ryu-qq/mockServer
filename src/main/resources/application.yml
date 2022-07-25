@@ -1,2 +1,6 @@
 server:
   port: 9000
+
+ExApi:
+  localUrl: "http://localhost:8085/api/v1"
+  prodUrl: "https://ext-api.beborn.co.kr/api/v1"
