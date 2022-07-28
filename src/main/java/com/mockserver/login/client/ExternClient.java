@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name = "externApiClient", url="${ExApi.localUrl}/import")
+@FeignClient(name = "externApiClient", url="${ExApi.prodUrl}/import")
 public interface ExternClient {
 
     @PostMapping(value = "/confirm")

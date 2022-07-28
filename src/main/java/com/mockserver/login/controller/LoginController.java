@@ -15,4 +15,8 @@ public class LoginController {
     public ResponseEntity getAccessToken(@RequestParam("token") String accessToken){
         return ResponseEntity.ok().body(TokenResponseDto.builder().token(accessToken).build());
     }
+
+    @GetMapping("/hello")
+    public String helloWorld(){return"hello world";}
+
 }

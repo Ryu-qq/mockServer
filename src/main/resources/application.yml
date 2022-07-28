@@ -1,5 +1,5 @@
 server:
-  port: 9000
+  port: 9030
 
 ExApi:
   localUrl: "http://localhost:8085/api/v1"
