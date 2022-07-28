@@ -10,5 +10,5 @@ RUN ./gradlew build
 FROM openjdk:11
 COPY --from=builder build/libs/login-0.0.1-SNAPSHOT.jar app.jar
 
-EXPOSE 9000
+EXPOSE 9030
 ENTRYPOINT ["java", "-jar","/app.jar"]
