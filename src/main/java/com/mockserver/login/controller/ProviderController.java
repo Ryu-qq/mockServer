@@ -42,10 +42,9 @@ public class ProviderController {
         redirectAttributes.addAttribute("state", stateList);
 
         Optional<Cookie> oauth2_auth_request = CookieUtil.getCookie(request, "oauth2_auth_request");
-
         response.addCookie(oauth2_auth_request.get());
 
-        return "redirect:https://app-api-stg-beborn-prod.apps.beborn-cluster.4p30.p1.openshiftapps.com/login/oauth2/code/mock";
+        return "redirect:https://3c4f-211-192-187-70.jp.ngrok.io/login/oauth2/code/mock";
     }
 
     @PostMapping("oauth/token")

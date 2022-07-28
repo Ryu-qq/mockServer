@@ -12,7 +12,7 @@ public class CookieUtil {
 
     public static Optional<Cookie> getCookie(HttpServletRequest request, String name) {
         Cookie[] cookies = request.getCookies();
-
+        System.out.println("cookies = " + cookies.length);
         if (cookies != null && cookies.length > 0) {
             for (Cookie cookie : cookies) {
                 if (name.equals(cookie.getName())) {
@@ -31,6 +31,7 @@ public class CookieUtil {
         cookie.setMaxAge(maxAge);
 
         response.addCookie(cookie);
+
     }
 
     public static void deleteCookie(HttpServletRequest request, HttpServletResponse response, String name) {
