@@ -30,7 +30,7 @@ public class OrderService {
 
 
         if(responseEntity.getStatusCode().equals(HttpStatus.OK)){
-            confirm(ImportWebhookRequestDto.builder()
+            webHook(ImportWebhookRequestDto.builder()
                     .imp_uid(addOrderRequestDto.getImportPayloadResponse().getImpUid())
                     .merchant_uid(addOrderRequestDto.getImportPayloadResponse().getMerchantUid())
                     .status("paid")
@@ -40,12 +40,10 @@ public class OrderService {
             return ResponseEntity.ok().body("good");
         }
 
-
-
         return ResponseEntity.badRequest().body("bad");
     }
 
-    public void confirm(ImportWebhookRequestDto importWebhookRequestDto) throws Exception {
+    public void webHook(ImportWebhookRequestDto importWebhookRequestDto) throws Exception {
 
 
         new Thread(new Runnable() {
