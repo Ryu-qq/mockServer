@@ -11,6 +11,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry){
         registry.addMapping("/**")
                 .allowedOrigins("https://3c4f-211-192-187-70.jp.ngrok.io")
+                .allowedOrigins("https://app-api-stg-beborn-prod.apps.beborn-cluster.4p30.p1.openshiftapps.com")
+                .allowCredentials(true)
                 .allowedMethods("GET", "POST")
                 .maxAge(3600);
     }
