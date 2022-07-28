@@ -11,4 +11,4 @@ FROM openjdk:11
 COPY --from=builder build/libs/api-0.0.1-SNAPSHOT.jar app.jar
 
 EXPOSE 9000
-ENTRYPOINT ["java","-Dspring.profiles.active=${SERVER_MODE}","-jar","/app.jar"]
+ENTRYPOINT ["java", "-jar","/app.jar"]
