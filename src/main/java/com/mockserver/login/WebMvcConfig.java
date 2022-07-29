@@ -17,8 +17,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 .allowedOrigins("http://35.235.243.1")
                 .allowedOrigins("https://app-api-stg-beborn-prod.apps.beborn-cluster.4p30.p1.openshiftapps.com")
                 .allowCredentials(true)
-                .allowedMethods("GET", "POST")
-                .allowedOrigins("*")
                 .allowedHeaders("*")
                 .allowedMethods("GET,POST,PUT,DELETE,OPTIONS")
                 .maxAge(3600);
