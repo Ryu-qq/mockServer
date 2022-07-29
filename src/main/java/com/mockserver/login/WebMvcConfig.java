@@ -14,9 +14,11 @@ public class WebMvcConfig implements WebMvcConfigurer {
         registry.addMapping("/**")
                 .allowedOrigins("https://3c4f-211-192-187-70.jp.ngrok.io")
                 .allowedOrigins("http:localhost:8089")
+                .allowedOrigins("http://35.235.243.1")
                 .allowedOrigins("https://app-api-stg-beborn-prod.apps.beborn-cluster.4p30.p1.openshiftapps.com")
                 .allowCredentials(true)
                 .allowedMethods("GET", "POST")
+                .allowedOrigins("*")
                 .maxAge(3600);
     }
 }
