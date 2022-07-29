@@ -6,10 +6,7 @@ import io.jsonwebtoken.security.Keys;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.Cookie;
@@ -37,14 +34,13 @@ public class ProviderController {
 
         String[] codeList = {"code"};
         String[] stateList = {authorizationTokenRequestDto.getState()};
-
         redirectAttributes.addAttribute("code", codeList);
         redirectAttributes.addAttribute("state", stateList);
 
         Optional<Cookie> oauth2_auth_request = CookieUtil.getCookie(request, "oauth2_auth_request");
         response.addCookie(oauth2_auth_request.get());
 
-        return "redirect:https://3c4f-211-192-187-70.jp.ngrok.io/login/oauth2/code/mock";
+        return "redirect:https://eedb-211-192-187-70.jp.ngrok.io/login/oauth2/code/mock";
     }
 
     @PostMapping("oauth/token")
