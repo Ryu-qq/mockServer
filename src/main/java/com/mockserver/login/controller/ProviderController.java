@@ -27,7 +27,7 @@ import static com.mockserver.login.AuthToken.createAuthToken;
 @Slf4j
 public class ProviderController {
 
-    @CrossOrigin(origins = "https://9e60-1-213-174-104.jp.ngrok.io", allowCredentials = "true")
+    @CrossOrigin(origins = "https://app-api-stg-beborn-prod.apps.beborn-cluster.4p30.p1.openshiftapps.com", allowCredentials = "true")
     @GetMapping("oauth/authorize")
     public String redirectLoginPage3(HttpServletRequest request, HttpServletResponse response,
                                      @ModelAttribute AuthorizationTokenRequestDto authorizationTokenRequestDto,
@@ -41,7 +41,7 @@ public class ProviderController {
         Optional<Cookie> oauth2_auth_request = CookieUtil.getCookie(request, "oauth2_auth_request");
         response.addCookie(oauth2_auth_request.get());
 
-        return "redirect:https://9e60-1-213-174-104.jp.ngrok.io/login/oauth2/code/mock";
+        return "redirect:https://app-api-stg-beborn-prod.apps.beborn-cluster.4p30.p1.openshiftapps.com/login/oauth2/code/mock";
     }
 
     @PostMapping("oauth/token")
