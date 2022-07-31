@@ -17,6 +17,7 @@ public class UserController {
 
     @GetMapping("/me")
     public ResponseEntity<HashMap<String, Object>> generateMember(){
+        System.out.println("me = " + 3);
 
         HashMap<String, Object> map = new HashMap<>();
         UserAccountDto mock_account = UserAccountDto.builder()

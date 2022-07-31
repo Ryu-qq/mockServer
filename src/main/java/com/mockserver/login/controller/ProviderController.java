@@ -32,7 +32,7 @@ public class ProviderController {
     public String redirectLoginPage3(HttpServletRequest request, HttpServletResponse response,
                                      @ModelAttribute AuthorizationTokenRequestDto authorizationTokenRequestDto,
                                      RedirectAttributes redirectAttributes){
-
+        System.out.println("oauth/authorize = " + request);
         String[] codeList = {"code"};
         String[] stateList = {authorizationTokenRequestDto.getState()};
         redirectAttributes.addAttribute("code", codeList);
@@ -46,6 +46,7 @@ public class ProviderController {
 
     @PostMapping("oauth/token")
     public ResponseEntity<HashMap<String, Object>> generateToken4(){
+        System.out.println("oauth/token = " + 2);
 
         LocalDateTime localDateTime = LocalDateTime.now().plusDays(3);
         Instant instant = localDateTime.atZone(ZoneId.systemDefault()).toInstant();

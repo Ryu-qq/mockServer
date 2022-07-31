@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class LoginController {
     @GetMapping("login/redirect")
     public ResponseEntity getAccessToken(@RequestParam("token") String accessToken){
+        System.out.println("accessToken = " + accessToken);
         return ResponseEntity.ok().body(TokenResponseDto.builder().token(accessToken).build());
     }
 
