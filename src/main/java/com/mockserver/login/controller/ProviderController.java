@@ -27,12 +27,13 @@ import static com.mockserver.login.AuthToken.createAuthToken;
 @Slf4j
 public class ProviderController {
 
-    @CrossOrigin(origins = "*", allowCredentials = "true")
+    @CrossOrigin(origins = "https://app-api-stg-beborn-prod.apps.beborn-cluster.4p30.p1.openshiftapps.com", allowCredentials = "true")
     @GetMapping("oauth/authorize")
     public String redirectLoginPage3(HttpServletRequest request, HttpServletResponse response,
                                      @ModelAttribute AuthorizationTokenRequestDto authorizationTokenRequestDto,
                                      RedirectAttributes redirectAttributes){
-        System.out.println("oauth/authorize = " + request);
+        System.out.println("oauth/authorize = " + request.getHeader("x-forwarded-for"));
+
         String[] codeList = {"code"};
         String[] stateList = {authorizationTokenRequestDto.getState()};
         redirectAttributes.addAttribute("code", codeList);
