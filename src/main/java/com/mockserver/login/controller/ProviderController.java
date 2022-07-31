@@ -27,6 +27,7 @@ import static com.mockserver.login.AuthToken.createAuthToken;
 @Slf4j
 public class ProviderController {
 
+    @CrossOrigin(origins = "https://9e60-1-213-174-104.jp.ngrok.io", allowCredentials = "true")
     @GetMapping("oauth/authorize")
     public String redirectLoginPage3(HttpServletRequest request, HttpServletResponse response,
                                      @ModelAttribute AuthorizationTokenRequestDto authorizationTokenRequestDto,
