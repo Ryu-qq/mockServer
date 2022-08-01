@@ -27,7 +27,6 @@ import static com.mockserver.login.AuthToken.createAuthToken;
 @Slf4j
 public class ProviderController {
 
-    @CrossOrigin(origins = "https://app-api-stg-beborn-prod.apps.beborn-cluster.4p30.p1.openshiftapps.com", allowCredentials = "true")
     @GetMapping("oauth/authorize")
     public String redirectLoginPage3(HttpServletRequest request, HttpServletResponse response,
                                      @ModelAttribute AuthorizationTokenRequestDto authorizationTokenRequestDto,
