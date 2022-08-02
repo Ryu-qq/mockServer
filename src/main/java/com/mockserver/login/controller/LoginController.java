@@ -17,7 +17,7 @@ public class LoginController {
         return ResponseEntity.ok().body(TokenResponseDto.builder().token(accessToken).build());
     }
 
-    @GetMapping("/hello")
-    public String helloWorld(){return"hello world";}
+    @GetMapping("/")
+    public String helloWorld(){return"hello mock world";}
 
 }
